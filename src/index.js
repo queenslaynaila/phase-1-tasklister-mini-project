@@ -1,28 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // your code here
-  const input = document.getElementById("create-task-form");
-  const formElement = document.querySelector("form");
-  formElement.addEventListener("submit", (e) => {
-    let newtask = input.value;
-
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    handleToDo(e.target.new_todo.value);
-    formElement.reset();
+    let li = document.createElement("li");
+    const userInput = document.getElementById("new-task-description");
+    li.innerText = userInput.value;
+    let ul = document.querySelector("ul");
+    ul.append(li);
+    deleteTask();
+    styleButton();
   });
 });
 
-function handleToDo(toDo) {
-  console.log(toDo);
-  let p = document.createElement("p");
-  let btn = document.createElement("button");
-  btn.addEventListener("click", handleDelete);
-  btn.textContent = "x";
-  p.textContent = `${toDo} `;
-  p.appendChild(btn);
-  console.log(p);
-  document.querySelector("#list").appendChild(p);
+function deleteTask() {
+  const button = document.createElement("button");
+  button.innerText = "X";
+  const div = document.getElementById("list");
+  div.appendChild(button);
+  button.style.backgroundColor = "red";
 }
-function handleDelete(e) {
-  e.target.parentNode.remove;
-}
+
