@@ -7,16 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     li.innerText = userInput.value;
     let ul = document.querySelector("ul");
     ul.append(li);
-    deleteTask();
-    styleButton();
+    const button = document.createElement("button");
+    button.innerText = "X";
+    const div = document.getElementById("list");
+      li.appendChild(button);
+    button.addEventListener("click",()=>{})
   });
 });
 
-function deleteTask() {
-  const button = document.createElement("button");
-  button.innerText = "X";
-  const div = document.getElementById("list");
-  div.appendChild(button);
-  button.style.backgroundColor = "red";
-}
 
