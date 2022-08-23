@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.createElement("button");
     button.innerText = "X";
     const div = document.getElementById("list");
-      li.appendChild(button);
-    button.addEventListener("click",()=>{})
+    li.appendChild(button);
+    button.addEventListener("click", () => {
+      li.remove();
+    });
   });
 });
-
 
